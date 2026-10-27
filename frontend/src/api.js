@@ -1,4 +1,4 @@
-const API_BASE_URL = "https://index-recommendation-engine-core-sync.onrender.com/api";
+const API_BASE_URL = "https://index-engine-faculty-api.onrender.com/api";
 
 async function request(path, options) {
   let response;
@@ -7,9 +7,10 @@ async function request(path, options) {
     response = await fetch(`${API_BASE_URL}${path}`, options);
   } catch {
     throw new Error(
-      "Cannot reach the backend. Start FastAPI on port 8000 and try again."
+      "Cannot reach the deployed backend. Please try again shortly."
     );
   }
+
 
   // 204 No Content has no body
   if (response.status === 204) {
